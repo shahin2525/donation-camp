@@ -2,7 +2,7 @@
   {
     "id": 1,
     "category": "food",
-    "image": "https://example.com/images/burger.jpg",
+    "image": "https://i.imgur.com/ehp0h1P.png",
     "title": "Delicious Burger",
     "price": 5.99,
     "cardBackgroundColor": "#FF6300",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "category": "food",
-    "image": "https://example.com/images/pizza.jpg",
+    "image": "https://i.imgur.com/ehp0h1P.png",
     "title": "Cheese Pizza",
     "price": 8.99,
     "cardBackgroundColor": "#FF6300",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "category": "food",
-    "image": "https://example.com/images/sushi.jpg",
+    "image": "https://i.imgur.com/ehp0h1P.png",
     "title": "Sushi Platter",
     "price": 15.99,
     "cardBackgroundColor": "#FF6300",
@@ -36,7 +36,7 @@
   {
     "id": 4,
     "category": "education",
-    "image": "https://example.com/images/book.jpg",
+    "image": "https://i.imgur.com/lkgPf3h.png",
     "title": "Math Textbook",
     "price": 45.99,
     "cardBackgroundColor": "#FF440A",
@@ -47,7 +47,7 @@
   {
     "id": 5,
     "category": "education",
-    "image": "https://example.com/images/online-course.jpg",
+    "image": "https://i.imgur.com/lkgPf3h.png",
     "title": "Online Programming Course",
     "price": 99.99,
     "cardBackgroundColor": "#FF440A",
@@ -58,7 +58,7 @@
   {
     "id": 6,
     "category": "education",
-    "image": "https://example.com/images/stationery.jpg",
+    "image": "https://i.imgur.com/lkgPf3h.png",
     "title": "Stationery Set",
     "price": 12.99,
     "cardBackgroundColor": "#FF440A",
@@ -69,7 +69,7 @@
   {
     "id": 7,
     "category": "clothing",
-    "image": "https://example.com/images/tshirt.jpg",
+    "image": "https://i.imgur.com/E9iHpdz.png",
     "title": "Graphic T-shirt",
     "price": 19.99,
     "cardBackgroundColor": "#79C00F",
@@ -80,7 +80,7 @@
   {
     "id": 8,
     "category": "clothing",
-    "image": "https://example.com/images/jeans.jpg",
+    "image": "https://i.imgur.com/E9iHpdz.png",
     "title": "Blue Jeans",
     "price": 39.99,
     "cardBackgroundColor": "#79C00F",
@@ -91,7 +91,7 @@
   {
     "id": 9,
     "category": "clothing",
-    "image": "https://example.com/images/jacket.jpg",
+    "image": "https://i.imgur.com/E9iHpdz.png",
     "title": "Leather Jacket",
     "price": 99.99,
     "cardBackgroundColor": "#79C00F",
@@ -102,7 +102,7 @@
   {
     "id": 10,
     "category": "health",
-    "image": "https://example.com/images/vitamins.jpg",
+    "image": "https://i.imgur.com/twe366C.png",
     "title": "Multivitamins",
     "price": 25.99,
     "cardBackgroundColor": "#0252FF",
@@ -113,7 +113,7 @@
   {
     "id": 11,
     "category": "health",
-    "image": "https://example.com/images/yoga-mat.jpg",
+    "image": "https://i.imgur.com/twe366C.png",
     "title": "Yoga Mat",
     "price": 29.99,
     "cardBackgroundColor": "#0252FF",
@@ -124,7 +124,7 @@
   {
     "id": 12,
     "category": "health",
-    "image": "https://example.com/images/first-aid-kit.jpg",
+    "image": "https://i.imgur.com/twe366C.png",
     "title": "First Aid Kit",
     "price": 14.99,
     "cardBackgroundColor": "#0252FF",
