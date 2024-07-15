@@ -6,8 +6,13 @@
     "title": "Delicious Burger",
     "price": 5.99,
     "cardBackgroundColor": "#FF6300",
-    "titleBackground": "#FF6337",
-    "titleTextColor": "#FF6357",
+    "titleBackground": "#FFC7ED",
+
+    "titleTextColor": "#E90074",
+
+    "cardBackgroundColor1": "#FF6300",
+    "titleBackground2": "#FF6337",
+    "titleTextColor3": "#FF6357",
     "description": "A juicy beef burger with fresh lettuce, tomato, and cheese."
   },
   {
@@ -17,8 +22,9 @@
     "title": "Cheese Pizza",
     "price": 8.99,
     "cardBackgroundColor": "#FF6300",
-    "titleBackground": "#FF6337",
-    "titleTextColor": "#FF6357",
+    "titleBackground": "#FFC7ED",
+
+    "titleTextColor": "#E90074",
     "description": "A classic cheese pizza with a crispy crust and savory sauce."
   },
   {
@@ -28,8 +34,9 @@
     "title": "Sushi Platter",
     "price": 15.99,
     "cardBackgroundColor": "#FF6300",
-    "titleBackground": "#FF6337",
-    "titleTextColor": "#FF6357",
+    "titleBackground": "#FFC7ED",
+
+    "titleTextColor": "#E90074",
 
     "description": "An assortment of fresh sushi, including nigiri and rolls."
   },
@@ -39,9 +46,9 @@
     "image": "https://i.imgur.com/lkgPf3h.png",
     "title": "Math Textbook",
     "price": 45.99,
-    "cardBackgroundColor": "#FF440A",
-    "titleBackground": "#FF444A",
-    "titleTextColor": "#FF447A",
+    "cardBackgroundColor": "#FF447A",
+    "titleBackground": "#1A3636",
+    "titleTextColor": "#F7F9F2",
     "description": "A comprehensive guide to algebra and calculus."
   },
   {
@@ -50,9 +57,9 @@
     "image": "https://i.imgur.com/lkgPf3h.png",
     "title": "Online Programming Course",
     "price": 99.99,
-    "cardBackgroundColor": "#FF440A",
-    "titleBackground": "#FF444A",
-    "titleTextColor": "#FF447A",
+    "cardBackgroundColor": "#FF447A",
+    "titleBackground": "#1A3636",
+    "titleTextColor": "#F7F9F2",
     "description": "Learn programming from scratch with this online course."
   },
   {
@@ -61,9 +68,9 @@
     "image": "https://i.imgur.com/lkgPf3h.png",
     "title": "Stationery Set",
     "price": 12.99,
-    "cardBackgroundColor": "#FF440A",
-    "titleBackground": "#FF444A",
-    "titleTextColor": "#FF447A",
+    "cardBackgroundColor": "#FF447A",
+    "titleBackground": "#1A3636",
+    "titleTextColor": "#F7F9F2",
     "description": "A complete set of stationery including pens, pencils, and notebooks."
   },
   {
@@ -74,7 +81,7 @@
     "price": 19.99,
     "cardBackgroundColor": "#79C00F",
     "titleBackground": "#79C24F",
-    "titleTextColor": "#32CD33",
+    "titleTextColor": "#000000",
     "description": "A comfortable cotton t-shirt with a stylish graphic print."
   },
   {
@@ -85,7 +92,7 @@
     "price": 39.99,
     "cardBackgroundColor": "#79C00F",
     "titleBackground": "#79C24F",
-    "titleTextColor": "#32CD33",
+    "titleTextColor": "#000000",
     "description": "Classic blue jeans with a modern fit and design."
   },
   {
@@ -96,7 +103,7 @@
     "price": 99.99,
     "cardBackgroundColor": "#79C00F",
     "titleBackground": "#79C24F",
-    "titleTextColor": "#32CD33",
+    "titleTextColor": "#000000",
     "description": "A stylish leather jacket perfect for any occasion."
   },
   {
@@ -105,9 +112,9 @@
     "image": "https://i.imgur.com/twe366C.png",
     "title": "Multivitamins",
     "price": 25.99,
-    "cardBackgroundColor": "#0252FF",
-    "titleBackground": "#1234FF",
-    "titleTextColor": "#0000FF",
+    "cardBackgroundColor": "#36C2CE",
+    "titleBackground": "#131842",
+    "titleTextColor": "#0252FF",
     "description": "A bottle of daily multivitamins for overall health."
   },
   {
@@ -116,9 +123,9 @@
     "image": "https://i.imgur.com/twe366C.png",
     "title": "Yoga Mat",
     "price": 29.99,
-    "cardBackgroundColor": "#0252FF",
-    "titleBackground": "#1234FF",
-    "titleTextColor": "#0000FF",
+    "cardBackgroundColor": "#36C2CE",
+    "titleBackground": "#131842",
+    "titleTextColor": "#0252FF",
     "description": "A high-quality yoga mat for your daily yoga practice."
   },
   {
@@ -127,9 +134,9 @@
     "image": "https://i.imgur.com/twe366C.png",
     "title": "First Aid Kit",
     "price": 14.99,
-    "cardBackgroundColor": "#0252FF",
-    "titleBackground": "#1234FF",
-    "titleTextColor": "#0000FF",
+    "cardBackgroundColor": "#36C2CE",
+    "titleBackground": "#131842",
+    "titleTextColor": "#0252FF",
     "description": "A comprehensive first aid kit for emergencies."
   }
 ]

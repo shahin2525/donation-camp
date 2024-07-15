@@ -1,21 +1,3 @@
-// import PropTypes from "prop-types";
-
-// const NavOptions = ({ route }) => {
-//   const { name, path } = route;
-//   return (
-//     <div>
-//       <li className="hover:bg-yellow-600 w-fit">
-//         <a href={path}>{name}</a>
-//       </li>
-//     </div>
-//   );
-// };
-// NavOptions.propTypes = {
-//   route: PropTypes.object,
-// };
-
-// export default NavOptions;
-
 import PropTypes from "prop-types";
 
 const Card = ({ donation }) => {
@@ -23,23 +5,36 @@ const Card = ({ donation }) => {
   const {
     image,
     category,
-    description,
-    price,
+    // description,
+    // price,
     title,
     cardBackgroundColor,
     titleBackground,
     titleTextColor,
   } = donation;
+  console.log(titleBackground);
 
   return (
-    <div className="h-[312px] w-[285px]">
-      <img src={image} alt="" srcSet="" />
+    <div
+      className="md:h-[312px] mb-4 rounded"
+      style={{ background: cardBackgroundColor }}
+    >
+      <img className="w-full" src={image} alt="" srcSet="" />
+      <div className="ml-2">
+        <p
+          className="font-medium text-[14px] p-1 w-fit rounded mt-2"
+          style={{ backgroundColor: titleBackground, color: titleTextColor }}
+        >
+          {category}
+        </p>
+        <h3 className="w-fit font-semibold text-5">{title}</h3>
+      </div>
     </div>
   );
 };
 
 Card.propTypes = {
-  card: PropTypes.object,
+  donation: PropTypes.object,
 };
 
 export default Card;
