@@ -1,7 +1,9 @@
+import BannerContainer from "../BannerContaner/BannerContainer";
+
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <BannerContainer></BannerContainer>
     </div>
   );
 };

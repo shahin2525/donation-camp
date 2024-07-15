@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import "./Header.css";
 
 const Header = () => {
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar fixed z-10 text-black max-w-6xl">
         <div className="flex-none">
           <button className="btn btn-square btn-ghost">
             <svg
@@ -25,7 +26,7 @@ const Header = () => {
           <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div className="flex-none">
-          <div className="">
+          <div className="mr-[48px] font-normal text-[18px]">
             <NavLink to={"/"}>Home</NavLink>
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,10 +42,10 @@ const Header = () => {
               ></path>
             </svg> */}
           </div>
-          <div>
+          <div className="mr-[48px] font-normal text-[18px]">
             <NavLink to="/donation">Donation</NavLink>
           </div>
-          <div>
+          <div className="font-normal text-[18px]">
             <NavLink to="/statistic">Static</NavLink>
           </div>
         </div>
