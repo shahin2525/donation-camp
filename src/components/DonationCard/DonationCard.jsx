@@ -17,13 +17,13 @@ const DonationCard = ({ donation }) => {
   };
   return (
     <div
-      className="grid grid-cols-3 mt-20"
+      className="grid sm:grid-cols-1 md:grid-cols-3 mt-20"
       style={{ backgroundColor: cardBackgroundColor }}
     >
-      <div className="col-span-1">
+      <div className="md:col-span-1">
         <img src={image} alt="" />
       </div>
-      <div className="col-span-2">
+      <div className="sm:col-1 md:col-span-2">
         <h3>{category}</h3>
         <h1>{title}</h1>
         <p>{price}</p>
