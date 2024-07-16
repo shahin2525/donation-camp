@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Card = ({ donation }) => {
   console.log(donation);
   const {
+    id,
     image,
     category,
     // description,
@@ -15,21 +17,24 @@ const Card = ({ donation }) => {
   console.log(titleBackground);
 
   return (
-    <div
-      className="md:h-[312px] mb-4 rounded"
-      style={{ background: cardBackgroundColor }}
-    >
-      <img className="w-full" src={image} alt="" srcSet="" />
-      <div className="ml-2">
-        <p
-          className="font-medium text-[14px] p-1 w-fit rounded mt-2"
-          style={{ backgroundColor: titleBackground, color: titleTextColor }}
-        >
-          {category}
-        </p>
-        <h3 className="w-fit font-semibold text-5">{title}</h3>
+    <Link to={`card/${id}`}>
+      <div
+        // onClick={() => <Link to={`card/${id}`}></Link>}
+        className="md:h-[312px] mb-4 rounded"
+        style={{ background: cardBackgroundColor }}
+      >
+        <img className="w-full" src={image} alt="" srcSet="" />
+        <div className="ml-2">
+          <p
+            className="font-medium text-[14px] p-1 w-fit rounded mt-2"
+            style={{ backgroundColor: titleBackground, color: titleTextColor }}
+          >
+            {category}
+          </p>
+          <h3 className="w-fit font-semibold text-5">{title}</h3>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
