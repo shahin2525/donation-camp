@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { PieChart, Pie, Tooltip, Cell } from "recharts";
+import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from "recharts";
 import { getStoredDonation } from "../../utility/utilis";
 import { useEffect, useState } from "react";
 
@@ -20,24 +20,31 @@ const Statistic = () => {
     { name: "Total-Donated", value: donatedLength },
   ];
   return (
-    <PieChart width={400} height={400}>
-      <Pie
-        dataKey="value"
-        isAnimationActive={false}
-        data={data}
-        cx="50%"
-        cy="50%"
-        outerRadius={80}
-        fill="#82ca9d"
-        label
-      >
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-        ))}
-      </Pie>
+    <div style={{ width: "100%", height: 400 }}>
+      <ResponsiveContainer>
+        <PieChart>
+          <Pie
+            dataKey="value"
+            isAnimationActive={false}
+            data={data}
+            cx="50%"
+            cy="50%"
+            outerRadius={80}
+            fill="#82ca9d"
+            label
+          >
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
 
-      <Tooltip />
-    </PieChart>
+          <Tooltip />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
