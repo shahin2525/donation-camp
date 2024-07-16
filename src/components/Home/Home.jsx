@@ -1,11 +1,11 @@
 import BannerContainer from "../BannerContaner/BannerContainer";
-import CardContainer from "../CardContainer/CardContainer";
+// import CardContainer from "../CardContainer/CardContainer";
 
 const Home = () => {
   return (
     <div>
       <BannerContainer></BannerContainer>
-      <CardContainer></CardContainer>
+      {/* <CardContainer></CardContainer> */}
     </div>
   );
 };
