@@ -12,7 +12,6 @@ const CardDetails = () => {
   // console.log(data);
 
   const handleId = (id) => {
-    console.log(id);
     toast.success("donate successfully");
     savedDonation(id);
   };

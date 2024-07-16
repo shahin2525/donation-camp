@@ -5,21 +5,41 @@ import DonationCard from "../DonationCard/DonationCard";
 
 const Donation = () => {
   const [storedDonation, setStoredDonation] = useState([]);
-  const ids = getStoredDonation();
+  const [dataLength, setDataLength] = useState(4);
+  console.log(dataLength);
   const donations = useLoaderData();
 
-  const matchData = donations.filter((donation) => ids.includes(donation.id));
+  useEffect(() => {
+    if (donations.length > 0) {
+      const ids = getStoredDonation();
+      const matchData = donations.filter((donation) =>
+        ids.includes(donation.id)
+      );
+      setStoredDonation(matchData);
+    }
+  }, [donations]);
 
-  console.log(matchData);
-  // const appliedJob = jobs.filter((job) => storedJobIds.includes(job.id));
-  // useEffect(() => {
-  //   setStoredDonation(matchData);
-  // }, []);
   return (
     <div>
-      {/* {savedDonation.map((donation) => (
-        <DonationCard key={donation.id} donation={donation}></DonationCard>
-      ))} */}
+      <div className="grid md:grid-cols-2 gap-5">
+        {storedDonation.slice(0, dataLength).map((donation) => (
+          <DonationCard key={donation.id} donation={donation}></DonationCard>
+        ))}
+      </div>
+      <div
+        className={
+          dataLength === storedDonation.length || storedDonation.length < 5
+            ? "hidden"
+            : "text-center"
+        }
+      >
+        <button
+          className="btn bg-red-400 text-white"
+          onClick={() => setDataLength(storedDonation.length)}
+        >
+          See all
+        </button>
+      </div>
     </div>
   );
 };
