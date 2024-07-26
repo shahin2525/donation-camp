@@ -45,8 +45,11 @@ const Header = () => {
           <div className="mr-[48px] font-normal text-[18px]">
             <NavLink to="/donation">Donation</NavLink>
           </div>
-          <div className="font-normal text-[18px]">
+          <div className="mr-[48px] font-normal text-[18px]">
             <NavLink to="/statistic">Static</NavLink>
+          </div>
+          <div className="font-normal text-[18px]">
+            <NavLink to="/login">Login</NavLink>
           </div>
         </div>
       </div>
