@@ -14,7 +14,7 @@ const Login = () => {
   const handleLogin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        const loggedUser = result.loggedUser;
+        const loggedUser = result.user;
         setUser(loggedUser);
         console.log(loggedUser);
       })
@@ -35,7 +35,7 @@ const Login = () => {
       <div>
         <div>
           <div>
-            <h1>Login page 2</h1>
+            <h1 className="mt-10">Login page 2</h1>
             <button className="mr-10 mt-10" onClick={handleLogin}>
               Login
             </button>
