@@ -35,7 +35,7 @@ const Login = () => {
       <div>
         <div>
           <div>
-            <h1>Login</h1>
+            <h1>Login page</h1>
             <button className="mr-10 mt-10" onClick={handleLogin}>
               Login
             </button>
