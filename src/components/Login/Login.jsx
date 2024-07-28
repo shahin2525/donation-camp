@@ -1,5 +1,6 @@
 import {
   getAuth,
+  GithubAuthProvider,
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
@@ -8,11 +9,12 @@ import { app } from "../../firebase/firebase.init";
 import { useState } from "react";
 const Login = () => {
   const [user, setUser] = useState(null);
-  const provider = new GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
   const auth = getAuth(app);
 
   const handleLogin = () => {
-    signInWithPopup(auth, provider)
+    signInWithPopup(auth, googleProvider)
       .then((result) => {
         const loggedUser = result.user;
         setUser(loggedUser);
@@ -31,7 +33,18 @@ const Login = () => {
         console.log(error);
       });
   };
-
+  const handleGithubLogin = () => {
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
   return (
     <div>
       <div>
@@ -41,6 +54,14 @@ const Login = () => {
             {!user && (
               <button className="mr-10 mt-10" onClick={handleLogin}>
                 Login
+              </button>
+            )}
+          </div>
+
+          <div>
+            {!user && (
+              <button className="mr-10 mt-10" onClick={handleGithubLogin}>
+                Github-Login
               </button>
             )}
           </div>
