@@ -24,7 +24,9 @@ const Login = () => {
   };
   const handleSignOut = () => {
     signOut(auth)
-      .then(() => {})
+      .then(() => {
+        setUser(null);
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -36,15 +38,17 @@ const Login = () => {
         <div>
           <div>
             <h1 className="mt-10">Login page 2</h1>
-            <button className="mr-10 mt-10" onClick={handleLogin}>
-              Login
-            </button>
-            <button onClick={handleSignOut}>Sign Out</button>
+            {!user && (
+              <button className="mr-10 mt-10" onClick={handleLogin}>
+                Login
+              </button>
+            )}
           </div>
 
           <div className="mt-10">
             {user && (
               <div>
+                <button onClick={handleSignOut}>Sign Out</button>
                 <h2>user-name:{user.displayName}</h2>
                 <p>Email:{user.email}</p>
                 <img src={user.photoURL} alt="" />
