@@ -7,6 +7,7 @@ import {
 } from "firebase/auth";
 import { app } from "../../firebase/firebase.init";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Login = () => {
   const [user, setUser] = useState(null);
   const googleProvider = new GoogleAuthProvider();
@@ -75,6 +76,12 @@ const Login = () => {
                 <img src={user.photoURL} alt="" />
               </div>
             )}
+          </div>
+          <div>
+            <span>do not have any account </span>
+            <button>
+              <Link to="/sign-up">sign-up</Link>
+            </button>
           </div>
         </div>
       </div>
