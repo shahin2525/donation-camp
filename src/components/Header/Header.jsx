@@ -4,8 +4,9 @@ import "./Header.css";
 const Header = () => {
   return (
     <div>
-      <div className="navbar fixed z-10 text-black max-w-6xl ">
+      <div className="navbar fixed z-10 bg-black text-white max-w-6xl bg-opacity-30">
         {/* navbar fixed z-10 text-black max-w-6xl  */}
+        {/* navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white */}
         <div className="flex-none">
           <button className="btn btn-square btn-ghost">
             <svg
