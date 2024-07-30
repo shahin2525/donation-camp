@@ -2,6 +2,7 @@ import {
   getAuth,
   GithubAuthProvider,
   GoogleAuthProvider,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
@@ -9,12 +10,38 @@ import { app } from "../../firebase/firebase.init";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const Login = () => {
+  //
   const [user, setUser] = useState(null);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
-  const auth = getAuth(app);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [type, setType] = useState(false);
 
-  const handleLogin = () => {
+  const auth = getAuth(app);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    setError("");
+    setSuccess("");
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        // ...
+        setSuccess("login sucessfully");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setError(errorMessage);
+        // ..
+      });
+  };
+
+  const handelSocialLogin = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const loggedUser = result.user;
@@ -51,10 +78,10 @@ const Login = () => {
       <div>
         <div>
           <div>
-            <h1 className="mt-10">Login page 2</h1>
+            <h1 className="mt-10">Login page </h1>
             {!user && (
-              <button className="mr-10 mt-10" onClick={handleLogin}>
-                Login
+              <button className="mr-10 mt-10" onClick={handelSocialLogin}>
+                Google login
               </button>
             )}
           </div>
@@ -83,6 +110,28 @@ const Login = () => {
               <Link to="/sign-up">sign-up</Link>
             </button>
           </div>
+        </div>
+        {/* login start */}
+        <div>
+          <div className="mt-4">
+            <h1>email login</h1>
+            <form className="mt-4" onSubmit={handleLogin}>
+              <input type="email" name="email" placeholder="type email" />
+              <br />
+              <input
+                type={type ? "text" : "password"}
+                name="password"
+                placeholder="type password"
+              />
+              <span onClick={() => setType(!type)}>
+                {type ? "hide" : "show password"}
+              </span>
+              <br />
+              <input type="submit" value="submit" />
+            </form>
+          </div>
+          {error && <p>error:{error}</p>}
+          {success && <p>{success}</p>}
         </div>
       </div>
     </div>
