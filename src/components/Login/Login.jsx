@@ -2,12 +2,13 @@ import {
   getAuth,
   GithubAuthProvider,
   GoogleAuthProvider,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
 import { app } from "../../firebase/firebase.init";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 const Login = () => {
   //
@@ -17,8 +18,10 @@ const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [type, setType] = useState(false);
+  const emailRef = useRef();
 
   const auth = getAuth(app);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -28,11 +31,15 @@ const Login = () => {
     setSuccess("");
 
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then((result) => {
         // Signed up
-        const user = userCredential.user;
-        // ...
-        setSuccess("login sucessfully");
+        console.log(result.user);
+
+        if (result.user.emailVerified) {
+          setSuccess("user login successfully");
+        } else {
+          alert("verify your email");
+        }
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -71,6 +78,27 @@ const Login = () => {
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+      });
+  };
+
+  const handleForgetPassword = (e) => {
+    e.preventDefault();
+    const email = emailRef.current.value;
+    if (!email) {
+      setError("please provide email");
+      return;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("please provide valid email ");
+      return;
+    }
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        alert("check your email");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+        // ..
       });
   };
   return (
@@ -116,7 +144,12 @@ const Login = () => {
           <div className="mt-4">
             <h1>email login</h1>
             <form className="mt-4" onSubmit={handleLogin}>
-              <input type="email" name="email" placeholder="type email" />
+              <input
+                type="email"
+                name="email"
+                placeholder="type email"
+                ref={emailRef}
+              />
               <br />
               <input
                 type={type ? "text" : "password"}
@@ -128,6 +161,12 @@ const Login = () => {
               </span>
               <br />
               <input type="submit" value="submit" />
+              <br />
+              <label>
+                <a onClick={handleForgetPassword} href="">
+                  forgot password
+                </a>
+              </label>
             </form>
           </div>
           {error && <p>error:{error}</p>}

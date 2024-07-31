@@ -1,6 +1,11 @@
 // import { createUserWithEmailAndPassword } from "firebase/auth/cordova";
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  updateProfile,
+} from "firebase/auth";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,6 +16,7 @@ const SignUp = () => {
   const auth = getAuth();
   const handleRegister = (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const accepted = e.target.terms.checked;
@@ -28,11 +34,26 @@ const SignUp = () => {
     }
 
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then((result) => {
         // Signed up
-        const user = userCredential.user;
-        // ...
-        setSuccess("user created sucessfully");
+        // const user = userCredential.user;
+        // update user profile
+
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: "https://example.com/jane-q-user/profile.jpg",
+        })
+          .then(() => {
+            console.log("updated user successfully");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+        setSuccess("user created successfully");
+        sendEmailVerification(result.user).then(() => {
+          alert("check email for verify");
+        });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -48,6 +69,8 @@ const SignUp = () => {
       <div className="mt-20">
         <h1>Sign up</h1>
         <form className="mt-20" onSubmit={handleRegister}>
+          <input type="text" name="name" placeholder="type your name" />
+          <br />
           <input type="email" name="email" placeholder="type email" />
           <br />
           <input
@@ -59,7 +82,9 @@ const SignUp = () => {
             {type ? "hide" : "show password"}
           </span>
           <br />
+
           <input type="checkbox" placeholder="checkbox" name="terms" />
+          <label htmlFor="">Accept our terms and condition</label>
           <br />
           <input type="submit" value="submit" />
         </form>
