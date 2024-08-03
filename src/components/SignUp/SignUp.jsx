@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
+  const authInfo = useContext(AuthContext);
   const handleSignUp = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -8,13 +11,13 @@ const SignUp = () => {
     const password = e.target.password.value;
     console.log(name, email, password);
   };
-
+  console.log({ authInfo });
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen pt-20">
         <div className="hero-content flex-col ">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+            <h1 className="text-5xl font-bold">Sign Up now!</h1>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
@@ -68,9 +71,9 @@ const SignUp = () => {
                 <button className="btn btn-primary">Sign up</button>
               </div>
               <p>
-                already have an account? please
+                already have an account? please{" "}
                 <Link to="/login">
-                  <button className="btn btn-primary">Login</button>
+                  <button className="btn btn-primary"> Login</button>
                 </Link>
               </p>
             </form>
