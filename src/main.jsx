@@ -10,6 +10,7 @@ import CardDetails from "./components/CardDetails/CardDetails";
 import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import AuthProvider from "./providers/AuthProvider";
+import PrivateRoutes from "./routes/PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
       {
         path: "/donation",
         loader: () => fetch("/donation.json"),
-        element: <Donation></Donation>,
+        element: (
+          <PrivateRoutes>
+            <Donation></Donation>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/card/:id",
