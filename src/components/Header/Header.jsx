@@ -44,6 +44,11 @@ const Header = () => {
           <div className="mr-[48px] font-normal text-[18px]">
             <NavLink to="/statistic">Static</NavLink>
           </div>
+          {user && (
+            <div className="mr-[48px] font-normal text-[18px]">
+              <NavLink to="/profile">Profile</NavLink>
+            </div>
+          )}
           <div className="font-normal text-[18px]">
             {user ? (
               <>

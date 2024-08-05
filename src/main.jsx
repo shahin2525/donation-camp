@@ -11,6 +11,7 @@ import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import AuthProvider from "./providers/AuthProvider";
 import PrivateRoutes from "./routes/PrivateRoutes";
+import Profile from "./components/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,16 @@ const router = createBrowserRouter([
         path: "/sign-up",
 
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/profile",
+
+        element: (
+          <PrivateRoutes>
+            {" "}
+            <Profile></Profile>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/donation",
